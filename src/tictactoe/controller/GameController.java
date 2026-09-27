@@ -1,13 +1,16 @@
 package src.tictactoe.controller;
 import src.tictactoe.service.GameService;
-import src.tictactoe.entities.Game;
+import src.tictactoe.enums.GameStatus;
+import src.tictactoe.model.Game;
+import src.tictactoe.model.Player;
 
 public class GameController {
     private GameService gameService;
-    private String player1name;
-    private String player2name;
-    private int boardSize;
+    // private String player1name;
+    // private String player2name;
+    // private int boardSize;
     private Game game;
+    private Player currentPlayer;
 
     public GameController(GameService gameService){
         this.gameService = gameService;
@@ -18,5 +21,17 @@ public class GameController {
         // this.player2name = player2name;
         // this.boardSize = boardSize;
         this.game = gameService.createGame(player1name, player2name, boardSize);
+
+        while(game.getGameStatus() == GameStatus.IN_PROGRESS){
+            currentPlayer = game.getCurrentPlayer();
+
+            try{
+                gameService.makeMove(game);
+            }
+            catch(Exception ex){
+                System.out.println("Invalid move, please make a valid move");
+            }
+            
+        }
     }    
 }

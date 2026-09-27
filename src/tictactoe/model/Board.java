@@ -1,4 +1,4 @@
-package src.tictactoe.entities;
+package src.tictactoe.model;
 import src.tictactoe.enums.Symbol;
 
 public class Board {
@@ -8,5 +8,10 @@ public class Board {
     public Board(int size){
         this.size = size;
         this.grid = new Symbol[size][size];
+        for(int i=0;i<size;i++){
+            for(int j=0;j<size;j++){
+                grid[i][j]=Symbol.Empty;
+            }
+        }
     }
 }

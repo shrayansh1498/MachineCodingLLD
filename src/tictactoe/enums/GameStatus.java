@@ -1,5 +1,8 @@
 package src.tictactoe.enums;
 
-public class GameStatus {
-    
+public enum GameStatus {
+    IN_PROGRESS,
+    X_WON,
+    O_WON,
+    DRAW;
 }

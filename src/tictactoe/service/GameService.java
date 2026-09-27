@@ -1,7 +1,7 @@
 package src.tictactoe.service;
-import src.tictactoe.entities.Game;
-import src.tictactoe.entities.Player;
 import src.tictactoe.enums.Symbol;
+import src.tictactoe.model.Game;
+import src.tictactoe.model.Player;
 
 public class GameService {
     public Game createGame(String player1name, String player2name, int boardSize){
@@ -10,6 +10,9 @@ public class GameService {
         Game game = new Game(player1, player2, boardSize);
         return game;
     }
-    
+
+    public void makeMove(Game game){
+        
+    }
 
 }

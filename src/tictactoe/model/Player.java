@@ -1,4 +1,4 @@
-package src.tictactoe.entities;
+package src.tictactoe.model;
 
 import src.tictactoe.enums.Symbol;
 
