@@ -5,7 +5,7 @@ public class Board {
     private final int size;
     private Symbol[][] grid;
 
-    Board(int size){
+    public Board(int size){
         this.size = size;
         this.grid = new Symbol[size][size];
     }
