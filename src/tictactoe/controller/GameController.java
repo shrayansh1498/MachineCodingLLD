@@ -3,6 +3,7 @@ import src.tictactoe.service.GameService;
 import src.tictactoe.enums.GameStatus;
 import src.tictactoe.model.Game;
 import src.tictactoe.model.Player;
+import src.tictactoe.model.Move;
 
 public class GameController {
     private GameService gameService;
@@ -24,9 +25,10 @@ public class GameController {
 
         while(game.getGameStatus() == GameStatus.IN_PROGRESS){
             currentPlayer = game.getCurrentPlayer();
+            Move move = new Move(Player, row, col);
 
             try{
-                gameService.makeMove(game);
+                gameService.makeMove(game, move);
             }
             catch(Exception ex){
                 System.out.println("Invalid move, please make a valid move");
