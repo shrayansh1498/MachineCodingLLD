@@ -14,7 +14,7 @@ public class Player {
     public String getName(){
         return name;
     }
-    public Symbol getsymbol(){
+    public Symbol getSymbol(){
         return symbol;
     }
 }   

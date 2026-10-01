@@ -25,7 +25,7 @@ public class GameController {
 
         while(game.getGameStatus() == GameStatus.IN_PROGRESS){
             currentPlayer = game.getCurrentPlayer();
-            Move move = new Move(Player, row, col);
+            Move move = new Move(currentPlayer, row, col);
 
             try{
                 gameService.makeMove(game, move);

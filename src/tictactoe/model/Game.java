@@ -30,5 +30,8 @@ public class Game {
         return currentPlayer;
     }
 
+    public Board getBoard(){
+        return board;
+    }
 
 }

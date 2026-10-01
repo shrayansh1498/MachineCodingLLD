@@ -14,4 +14,13 @@ public class Board {
             }
         }
     }
+
+    public boolean isValid(int row, int col){
+        if(row<0 || row>=size || col<0 || col>=size)
+            return false;
+        else if (grid[row][col] != Symbol.Empty)
+            return false;
+        else return true;
+            
+    }
 }
