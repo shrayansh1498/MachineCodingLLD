@@ -1,9 +1,9 @@
 package src.tictactoe.controller;
+import src.tictactoe.domain.Game;
+import src.tictactoe.domain.Move;
+import src.tictactoe.domain.Player;
+import src.tictactoe.domain.enums.GameStatus;
 import src.tictactoe.service.GameService;
-import src.tictactoe.enums.GameStatus;
-import src.tictactoe.model.Game;
-import src.tictactoe.model.Player;
-import src.tictactoe.model.Move;
 
 public class GameController {
     private GameService gameService;

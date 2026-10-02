@@ -1,4 +1,4 @@
-package src.tictactoe.model;
+package src.tictactoe.domain;
 
 public class Move {
     private Player player;

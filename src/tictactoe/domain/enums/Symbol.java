@@ -1,4 +1,4 @@
-package src.tictactoe.enums;
+package src.tictactoe.domain.enums;
 
 public enum Symbol {
     X('X'),

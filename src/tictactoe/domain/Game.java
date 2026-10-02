@@ -1,7 +1,7 @@
-package src.tictactoe.model;
+package src.tictactoe.domain;
 
-import src.tictactoe.enums.GameStatus;
-import src.tictactoe.model.Player;
+import src.tictactoe.domain.Player;
+import src.tictactoe.domain.enums.GameStatus;
 
 public class Game {
     private Player player1;

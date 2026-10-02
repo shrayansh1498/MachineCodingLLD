@@ -1,9 +1,9 @@
 package src.tictactoe.service;
-import src.tictactoe.enums.Symbol;
-import src.tictactoe.model.Game;
-import src.tictactoe.model.Player;
-import src.tictactoe.model.Move;
-import src.tictactoe.model.Board;
+import src.tictactoe.domain.Board;
+import src.tictactoe.domain.Game;
+import src.tictactoe.domain.Move;
+import src.tictactoe.domain.Player;
+import src.tictactoe.domain.enums.Symbol;
 
 public class GameService {
     private Player currentPlayer;
