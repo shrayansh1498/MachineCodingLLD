@@ -32,6 +32,10 @@ public class Board {
         return grid;
     }
 
+    public int getBoardSize(){
+        return boardSize;
+    }
+
     public boolean isFull(){
         for(int i=0;i<boardSize;i++){
             for(int j=0;j<boardSize;j++){

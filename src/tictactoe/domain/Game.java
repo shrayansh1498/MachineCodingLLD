@@ -1,6 +1,5 @@
 package src.tictactoe.domain;
 
-import src.tictactoe.domain.Player;
 import src.tictactoe.domain.enums.GameStatus;
 import src.tictactoe.domain.enums.Symbol;
 

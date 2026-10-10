@@ -14,7 +14,11 @@ public class GameService {
     private Board board;
     private Symbol grid[][];
     private boolean isValid;
-    private boolean flag;
+    private boolean rowFlag;
+    private boolean colFlag;
+    private boolean diagFlag;
+    private boolean antiDiagFlag;
+
     public Game createGame(String player1name, String player2name, int boardSize){
         this.boardSize = boardSize;
         Player player1 = new Player(player1name, Symbol.X);
@@ -53,40 +57,50 @@ public class GameService {
 
     public boolean checkWin(int row, int col, Symbol symbol){
         grid = board.getGrid();
-        flag = true;
+        rowFlag = true;
+        colFlag = true;
+        diagFlag = true;
+        antiDiagFlag = true;
+
+
         for(int i=0;i<boardSize;i++){
             if(grid[i][col]!=symbol){
-                flag=false;
+                colFlag=false;
                 break;
             }
         }
-        if(flag) return true;
+        if(colFlag) return true;
 
         for(int i=0;i<boardSize;i++){
             if(grid[row][i]!=symbol){
-                flag=false;
+                rowFlag=false;
                 break;
             }
         }
-        if(flag) return true;
+        if(rowFlag) return true;
 
         if(row==col){
             for(int i=0;i<boardSize;i++){
                 if(grid[i][i]!=symbol){
-                    flag=false;
+                    diagFlag=false;
                     break;
                 }
             }
-            if(flag) return true;
-
-            for(int i=0;i<boardSize;i++){
-                if(grid[row][boardSize-i-1]!=symbol){
-                    flag=false;
-                    break;
-                }
-            }
+            if(diagFlag) return true;
         }
-        return flag;
+        
+        
+        if(row + col == boardSize - 1){
+            for(int i=0;i<boardSize;i++){
+                if(grid[i][boardSize-i-1]!=symbol){
+                    antiDiagFlag=false;
+                    break;
+                }
+            }
+            return antiDiagFlag;
+        }
+            
+        return false;
 
     }
 
