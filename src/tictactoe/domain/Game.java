@@ -2,36 +2,55 @@ package src.tictactoe.domain;
 
 import src.tictactoe.domain.Player;
 import src.tictactoe.domain.enums.GameStatus;
+import src.tictactoe.domain.enums.Symbol;
+
+import java.util.List;
 
 public class Game {
-    private Player player1;
-    private Player player2;
+    private List<Player> players;
     private Board board;
     private GameStatus gameStatus;
-    private Player currentPlayer;
+    private int currentPlayerIndex;
+    private Symbol winner;
 
     public Game(Player player1, Player player2, int boardSize){
-        this.player1=player1;
-        this.player2=player2;
+        //This is also valid
+        //this.players = new ArrayList<>();
+        // this.players.add(player1);
+        // this.players.add(player2);
+        this.players = List.of(player1, player2);
+
         this.board = new Board(boardSize);
         this.gameStatus = GameStatus.IN_PROGRESS;
-        this.currentPlayer = player1;
+        this.currentPlayerIndex = 0;
     }
 
     public GameStatus getGameStatus(){
         return gameStatus;
     }
 
-    public void setCurrentPlayer(Player currentPlayer){
-        this.currentPlayer = currentPlayer;
+    public void setGameStatus(GameStatus gameStatus){
+        this.gameStatus = gameStatus;
+    }
+
+    public void switchTurn(){
+        currentPlayerIndex = 1-currentPlayerIndex;
     }
 
     public Player getCurrentPlayer(){
-        return currentPlayer;
+        return players.get(currentPlayerIndex);
     }
 
     public Board getBoard(){
         return board;
+    }
+
+    public void setWinner(Symbol winner){
+        this.winner = winner;
+    }
+
+    public Symbol getWinner(){
+        return winner;
     }
 
 }

@@ -2,7 +2,6 @@ package src.tictactoe.domain.enums;
 
 public enum GameStatus {
     IN_PROGRESS,
-    X_WON,
-    O_WON,
+    WON,
     DRAW;
 }
