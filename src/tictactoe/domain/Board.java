@@ -4,6 +4,7 @@ import src.tictactoe.domain.enums.Symbol;
 public class Board {
     private final int boardSize;
     private Symbol[][] grid;
+    private int filledCells = 0;
 
     public Board(int boardSize){
         this.boardSize = boardSize;
@@ -26,10 +27,11 @@ public class Board {
 
     public void placeSymbol(int row, int col, Symbol symbol){
         grid[row][col] = symbol;
+        filledCells++;
     }
 
-    public Symbol[][] getGrid(){
-        return grid;
+    public Symbol getGridSymbol(int row, int col){
+        return grid[row][col];
     }
 
     public int getBoardSize(){
@@ -37,11 +39,6 @@ public class Board {
     }
 
     public boolean isFull(){
-        for(int i=0;i<boardSize;i++){
-            for(int j=0;j<boardSize;j++){
-                if(grid[i][j]==Symbol.Empty) return false;
-            }
-        }
-        return true;
+        return filledCells == boardSize*boardSize;
     }
 }

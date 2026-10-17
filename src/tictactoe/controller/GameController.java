@@ -1,45 +1,43 @@
 package src.tictactoe.controller;
-import src.tictactoe.adapter.GameAdapter;
 import src.tictactoe.domain.Game;
 import src.tictactoe.domain.Move;
 import src.tictactoe.domain.Player;
 import src.tictactoe.domain.enums.GameStatus;
 import src.tictactoe.service.GameService;
+import src.tictactoe.view.GameView;
 
 public class GameController {
-    private GameService gameService;
-    private GameAdapter adapter;
-    private Game game;
-    private Player currentPlayer;
-    private Move move;
-    private String message;
+    private final GameService gameService;
+    private final GameView gameView;
 
-    public GameController(GameService gameService, GameAdapter adapter){
+    public GameController(GameService gameService, GameView gameView){
         this.gameService = gameService;
-        this.adapter = adapter;
+        this.gameView = gameView;
     }
 
-    public void initializeGame(String player1name, String player2name, int boardSize){
-        this.game = gameService.createGame(player1name, player2name, boardSize);
+    public void startGame(String player1name, String player2name, int boardSize){
+        Game game = gameService.createGame(player1name, player2name, boardSize);
 
         while(game.getGameStatus() == GameStatus.IN_PROGRESS){
-            currentPlayer = game.getCurrentPlayer();
-            move = adapter.getPlayerMove(currentPlayer, game.getBoard());
+            Player currentPlayer = game.getCurrentPlayer();
+            Move move = gameView.getPlayerMove(currentPlayer, game.getBoard());
 
             try{
-                gameService.makeMove(game, move.getRow(), move.getCol());
+                gameService.makeMove(game, move);
             }
-            catch(Exception ex){
-                adapter.printMessage("Invalid move, please make a valid move");
+            catch(IllegalArgumentException ex){
+                gameView.printMessage(ex.getMessage());
             }
-            
         }
-        
+
+        String message;
+        gameView.printBoard(game.getBoard());
+
         if(game.getGameStatus() == GameStatus.WON){
-            message = "Game is won by Player " + currentPlayer;
+            message = "Game is won by Player " + game.getWinner().getName();
         }
         else  message = "Game is Draw";
 
-        adapter.printMessage(message);
+        gameView.printMessage(message);
     }    
 }

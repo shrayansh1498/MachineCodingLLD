@@ -1,19 +1,16 @@
-package src.tictactoe.adapter;
+package src.tictactoe.view;
 
 import src.tictactoe.domain.Move;
 import src.tictactoe.domain.Player;
-import src.tictactoe.domain.enums.Symbol;
 
 import java.util.Scanner;
 
 import src.tictactoe.domain.Board;
 
-public class GameAdapter {
-    private int row;
-    private int col;
+public class ConsoleGameView implements GameView {
     private Scanner scanner;
 
-    public GameAdapter(Scanner scanner){
+    public ConsoleGameView(Scanner scanner){
         this.scanner = scanner;
     }
 
@@ -21,19 +18,18 @@ public class GameAdapter {
 
         printBoard(board);
         System.out.println(player.getName() + " with Symbol " + player.getSymbol() + ", please enter row and column number of your move:");
-        row = scanner.nextInt();
-        col = scanner.nextInt();
+        int row = scanner.nextInt();
+        int col = scanner.nextInt();
 
         return new Move(player, row, col);
     }
 
-    private void printBoard(Board board){
+    public void printBoard(Board board){
         int size = board.getBoardSize();
-        Symbol grid[][] = board.getGrid();
 
         for(int i=0;i<size;i++){
             for(int j=0;j<size;j++){
-                System.out.print(grid[i][j] + " ");
+                System.out.print(board.getGridSymbol(i, j) + " ");
             }
             System.out.println();
         }

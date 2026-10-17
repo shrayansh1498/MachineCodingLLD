@@ -10,7 +10,7 @@ public class Game {
     private Board board;
     private GameStatus gameStatus;
     private int currentPlayerIndex;
-    private Symbol winner;
+    private Player winner;
 
     public Game(Player player1, Player player2, int boardSize){
         //This is also valid
@@ -44,11 +44,11 @@ public class Game {
         return board;
     }
 
-    public void setWinner(Symbol winner){
+    public void setWinner(Player winner){
         this.winner = winner;
     }
 
-    public Symbol getWinner(){
+    public Player getWinner(){
         return winner;
     }
 
