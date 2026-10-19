@@ -1,10 +1,10 @@
-package src.tictactoe.controller;
-import src.tictactoe.domain.Game;
-import src.tictactoe.domain.Move;
-import src.tictactoe.domain.Player;
-import src.tictactoe.domain.enums.GameStatus;
-import src.tictactoe.service.GameService;
-import src.tictactoe.view.GameView;
+package src.TicTacToe.controller;
+import src.TicTacToe.domain.Game;
+import src.TicTacToe.domain.Move;
+import src.TicTacToe.domain.Player;
+import src.TicTacToe.domain.enums.GameStatus;
+import src.TicTacToe.service.GameService;
+import src.TicTacToe.view.GameView;
 
 public class GameController {
     private final GameService gameService;

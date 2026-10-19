@@ -1,9 +1,9 @@
-package src.tictactoe.domain;
-
-import src.tictactoe.domain.enums.GameStatus;
-import src.tictactoe.domain.enums.Symbol;
+package src.TicTacToe.domain;
 
 import java.util.List;
+
+import src.TicTacToe.domain.enums.GameStatus;
+import src.TicTacToe.domain.enums.Symbol;
 
 public class Game {
     private List<Player> players;

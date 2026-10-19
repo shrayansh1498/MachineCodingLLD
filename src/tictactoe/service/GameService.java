@@ -1,13 +1,12 @@
-package src.tictactoe.service;
-import src.tictactoe.domain.Board;
-import src.tictactoe.domain.Game;
-import src.tictactoe.domain.Move;
-// import src.tictactoe.domain.Move;
-import src.tictactoe.domain.Player;
-import src.tictactoe.domain.enums.GameStatus;
-import src.tictactoe.domain.enums.Symbol;
-import src.tictactoe.strategy.StandardWinningStrategy;
-import src.tictactoe.strategy.WinningStrategy;
+package src.TicTacToe.service;
+import src.TicTacToe.domain.Board;
+import src.TicTacToe.domain.Game;
+import src.TicTacToe.domain.Move;
+import src.TicTacToe.domain.Player;
+import src.TicTacToe.domain.enums.GameStatus;
+import src.TicTacToe.domain.enums.Symbol;
+import src.TicTacToe.strategy.StandardWinningStrategy;
+import src.TicTacToe.strategy.WinningStrategy;
 
 public class GameService {
 

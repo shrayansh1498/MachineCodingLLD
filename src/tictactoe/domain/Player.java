@@ -1,6 +1,6 @@
-package src.tictactoe.domain;
+package src.TicTacToe.domain;
 
-import src.tictactoe.domain.enums.Symbol;
+import src.TicTacToe.domain.enums.Symbol;
 
 public class Player {
     private final String name;

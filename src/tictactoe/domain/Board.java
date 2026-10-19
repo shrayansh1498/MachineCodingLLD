@@ -1,5 +1,5 @@
-package src.tictactoe.domain;
-import src.tictactoe.domain.enums.Symbol;
+package src.TicTacToe.domain;
+import src.TicTacToe.domain.enums.Symbol;
 
 public class Board {
     private final int boardSize;

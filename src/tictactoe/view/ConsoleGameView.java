@@ -1,11 +1,10 @@
-package src.tictactoe.view;
-
-import src.tictactoe.domain.Move;
-import src.tictactoe.domain.Player;
+package src.TicTacToe.view;
 
 import java.util.Scanner;
 
-import src.tictactoe.domain.Board;
+import src.TicTacToe.domain.Board;
+import src.TicTacToe.domain.Move;
+import src.TicTacToe.domain.Player;
 
 public class ConsoleGameView implements GameView {
     private Scanner scanner;

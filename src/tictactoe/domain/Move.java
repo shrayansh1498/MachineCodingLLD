@@ -1,4 +1,4 @@
-package src.tictactoe.domain;
+package src.TicTacToe.domain;
 
 public class Move {
     private Player player;

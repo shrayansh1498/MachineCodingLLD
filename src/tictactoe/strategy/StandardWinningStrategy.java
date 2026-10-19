@@ -1,8 +1,8 @@
-package src.tictactoe.strategy;
+package src.TicTacToe.strategy;
 
-import src.tictactoe.domain.Board;
-import src.tictactoe.domain.Move;
-import src.tictactoe.domain.enums.Symbol;
+import src.TicTacToe.domain.Board;
+import src.TicTacToe.domain.Move;
+import src.TicTacToe.domain.enums.Symbol;
 
 public class StandardWinningStrategy implements WinningStrategy {
 

@@ -1,7 +1,7 @@
-package src.tictactoe.strategy;
+package src.TicTacToe.strategy;
 
-import src.tictactoe.domain.Board;
-import src.tictactoe.domain.Move;
+import src.TicTacToe.domain.Board;
+import src.TicTacToe.domain.Move;
 
 public interface WinningStrategy {
     boolean checkWin(Move move, Board board);

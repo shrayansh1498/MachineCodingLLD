@@ -1,8 +1,8 @@
-package src.tictactoe.view;
+package src.TicTacToe.view;
 
-import src.tictactoe.domain.Board;
-import src.tictactoe.domain.Move;
-import src.tictactoe.domain.Player;
+import src.TicTacToe.domain.Board;
+import src.TicTacToe.domain.Move;
+import src.TicTacToe.domain.Player;
 
 public interface GameView {
     void printBoard(Board board);

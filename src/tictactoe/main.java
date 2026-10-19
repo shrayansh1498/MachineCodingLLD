@@ -1,11 +1,11 @@
-package src.tictactoe;
+package src.TicTacToe;
 
 import java.util.Scanner;
 
-import src.tictactoe.service.GameService;
-import src.tictactoe.strategy.OrderOneWinningStrategy;
-import src.tictactoe.view.ConsoleGameView;
-import src.tictactoe.controller.GameController;
+import src.TicTacToe.controller.GameController;
+import src.TicTacToe.service.GameService;
+import src.TicTacToe.strategy.OrderOneWinningStrategy;
+import src.TicTacToe.view.ConsoleGameView;
 
 public class Main {
     public static void main(String []args){

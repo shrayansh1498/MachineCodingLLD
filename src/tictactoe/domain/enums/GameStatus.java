@@ -1,4 +1,4 @@
-package src.tictactoe.domain.enums;
+package src.TicTacToe.domain.enums;
 
 public enum GameStatus {
     IN_PROGRESS,
